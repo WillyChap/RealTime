@@ -1,0 +1,23 @@
+#==============================
+# config_post_process_system.yaml
+
+# This config file contains the standard set of variables and plots used for
+# evaluating CAM simulations in the AMWG working group.
+
+# Currently, if one is on NCAR's Casper or
+# Cheyenne machine then this runs like clockwork 
+
+# otherwise this file must be edited
+# (these are indicated with "MUST EDIT" comments).
+# Running these diagnostics on a different machine,
+# or with a different, non-example simulation, will
+# require additional modifications.
+#
+#Config file Keywords:
+#--------------------
+
+#This second set of variables provides info for the software package:
+path_root_information:
+    #Location of rootd directory :
+    root_loc: /glade/work/wchapman/CW3E_Product/RealTime/ #MUST EDIT!
+    
