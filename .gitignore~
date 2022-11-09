@@ -1,0 +1,6 @@
+*.log
+*.nc
+*.pyc
+temp/
+.ipynb_checkpoints
+**/*.ipynb_checkpoints/

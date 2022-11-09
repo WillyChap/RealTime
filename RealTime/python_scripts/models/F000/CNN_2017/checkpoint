@@ -1,0 +1,2 @@
+model_checkpoint_path: "cpf_CRPS_val_2016_test_2017.ckpt"
+all_model_checkpoint_paths: "cpf_CRPS_val_2016_test_2017.ckpt"
