@@ -1,7 +1,6 @@
 # RealTime
-# RealTime
 
 
 ## to do: 
 
-- Add config file to adjust all file paths to root. 
+- Make bash script read yaml file? PAT!?!?!? 
