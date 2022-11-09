@@ -42,30 +42,34 @@ import Unet_b
 import utils_CNN
 import coms
 from tensorflow.python.client import device_lib
-####################################################################################
-tf.random.set_seed(33) #patrick roy's number.
-####################################################################################
-
-stepnum=2
-years_back = 2
-input_nc_file='/glade/work/wchapman/ARcnn_LRP_DEMO/RealTime/regrid_folder/IVT_ERAGrid_F003.nc'
-norm_file ='/glade/work/wchapman/ARcnn_LRP_DEMO/RealTime/python_scripts/models/F003/norm_dict.npy'
-outputfile ='/glade/work/wchapman/ARcnn_LRP_DEMO/RealTime/output_forecast/pp_F003.nc'
-Wsave_name='/glade/work/wchapman/ARcnn_LRP_DEMO/RealTime/python_scripts/models/F003/cpf_CRPS_val_2016_test_2017.ckpt'
-
-
-dirA = ['F'+f'{x:03}' for x in np.arange(0,168,3)]
-print('#############################################')
-print('post processing forecast:', dirA[stepnum-1])
-print('#############################################')
+   
+    
 from matplotlib.colors import ListedColormap
-
 import scipy.stats
 import model_u
 from importlib import reload 
 import tensorflow.keras.models as Models
 import tensorflow.keras.layers as Layers
 import json
+
+import yaml
+with open('../config_for.yaml') as f:
+    yaml_dict = yaml.safe_load(f)
+    
+####################################################################################
+tf.random.set_seed(33) #patrick roy's number.
+####################################################################################
+
+print(yaml_dict['path_root_information']['root_loc'])
+root_loc = yaml_dict['path_root_information']['root_loc']
+
+stepnum=2
+years_back = 2
+input_nc_file= root_loc+'regrid_folder/IVT_ERAGrid_F003.nc'
+norm_file = root_loc+'python_scripts/models/F003/norm_dict.npy'
+outputfile =root_loc+'output_forecast/pp_F003.nc'
+Wsave_name= root_loc+'python_scripts/models/F003/cpf_CRPS_val_2016_test_2017.ckpt'
+
 #################################################################################
 ### Import Packages ### run in tfp environment: 
 ####################################################################################
